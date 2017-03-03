@@ -1,0 +1,21 @@
+{
+  "name": "ElectroGloss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.2",
+    "electron": "^1.6.1",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.1"
+  }
+}
