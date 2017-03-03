@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Gloss</h1>
+        <h1>ElectroGloss</h1>
 
         <h3>Add a Term</h3>
 
@@ -47,9 +47,9 @@
             </div>
         </form>
 
-        <term-list v-for="term in terms" :term="term"></term-list>
+        <!--<term-list v-for="term in terms" :term="term"></term-list>
 
-        <yml-preview :yml="ymlOutput" v-show="terms.length > 0"></yml-preview>
+        <yml-preview :yml="ymlOutput" v-show="terms.length > 0"></yml-preview>-->
     </div>
 </template>
 

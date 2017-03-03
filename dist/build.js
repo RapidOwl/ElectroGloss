@@ -7198,7 +7198,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v("Gloss")]), _vm._v(" "), _c('h3', [_vm._v("Add a Term")]), _vm._v(" "), _c('form', {
+  return _c('div', [_c('h1', [_vm._v("ElectroGloss")]), _vm._v(" "), _c('h3', [_vm._v("Add a Term")]), _vm._v(" "), _c('form', {
     on: {
       "submit": function($event) {
         $event.preventDefault();
@@ -7451,23 +7451,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "disabled": "disabled",
       "disabled": !_vm.newTermValid
     }
-  }, [_vm._v("Submit")])])]), _vm._v(" "), _vm._l((_vm.terms), function(term) {
-    return _c('term-list', {
-      attrs: {
-        "term": term
-      }
-    })
-  }), _vm._v(" "), _c('yml-preview', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.terms.length > 0),
-      expression: "terms.length > 0"
-    }],
-    attrs: {
-      "yml": _vm.ymlOutput
-    }
-  })], 2)
+  }, [_vm._v("Submit")])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -7516,18 +7500,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].component('term-list', {
-    props: ['term'],
-    template: '<div>' + '<div class="row"><div class="four columns">{{ term.name }}</div><div class="eight columns">{{ term.description }}</div></div>' + '<div class="row"><div class="four columns">{{ term.tags }}</div><div class="four columns">{{ term.otherNames }}</div><div class="four columns">{{ term.disambiguations }}</div></div>' + '<div>'
-});
+// Vue.component('term-list', {
+//     props: ['term'],
+//     template: '<div>' +
+//     '<div class="row"><div class="four columns">{{ term.name }}</div><div class="eight columns">{{ term.description }}</div></div>' +
+//     '<div class="row"><div class="four columns">{{ term.tags }}</div><div class="four columns">{{ term.otherNames }}</div><div class="four columns">{{ term.disambiguations }}</div></div>' +
+//     '<div>'
+// });
 
-__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].component('yml-preview', {
-    props: ['yml'],
-    template: '<pre style=\'border: 1px dashed red; padding: 10px;\'>{{ yml }}</pre>'
-});
+// Vue.component('yml-preview', {
+//     props: ['yml'],
+//     template: '<pre style=\'border: 1px dashed red; padding: 10px;\'>{{ yml }}</pre>'
+// });
 
 new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
-    el: 'app',
+    el: '#app',
     components: { App: __WEBPACK_IMPORTED_MODULE_1__App_vue___default.a }
 });
 
