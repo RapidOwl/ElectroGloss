@@ -2,6 +2,7 @@ import Vue from 'vue/dist/vue'
 import App from './App.vue'
 import Normalize from '../assets/css/normalize.css'
 import Skeleton from '../assets/css/skeleton.css'
+import SiteCss from '../assets/css/site.css'
 
 Vue.component('term-list', {
     props: ['term'],
