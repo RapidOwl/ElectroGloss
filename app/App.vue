@@ -47,9 +47,9 @@
             </div>
         </form>
 
-        <!--<term-list v-for="term in terms" :term="term"></term-list>
+        <term-list v-for="term in terms" :term="term"></term-list>
 
-        <yml-preview :yml="ymlOutput" v-show="terms.length > 0"></yml-preview>-->
+        <yml-preview :yml="ymlOutput" v-show="terms.length > 0"></yml-preview>
     </div>
 </template>
 
@@ -134,7 +134,7 @@
             }
         },
         mounted: function () {
-            alert('Hello!');
+
         },
         updated: function () {
 
