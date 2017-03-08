@@ -12,6 +12,9 @@ const store = new Store({
     }
 });
 
+// Make the store available to getGlobal in remote API.
+global.store = store;
+
 // Get the window bounds from the store.
 let { width, height } = store.get('windowBounds');
 
@@ -20,8 +23,6 @@ let mainWindow;
 function createWindow() {
     // create the browser window
     mainWindow = new BrowserWindow({ width: width, height: height });
-
-    mainWindow.store = store;
 
     // render index.html which will contain our root Vue component
     mainWindow.loadURL('file://' + __dirname + '/index.html');

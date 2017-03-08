@@ -54,7 +54,7 @@
 </template>
 
 <script>
-    const store = require('electron').remote.getCurrentWindow().store;
+    const store = require('electron').remote.getGlobal('store');
 
     export default {
         data: {
