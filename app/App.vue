@@ -54,6 +54,8 @@
 </template>
 
 <script>
+    const store = require('electron').remote.getCurrentWindow().store;
+
     export default {
         data: {
             terms: [],
@@ -104,6 +106,8 @@
                     this.newTerm.tags = [];
                     this.newTerm.otherNames = [];
                     this.newTerm.disambiguations = [];
+
+                    store.set('terms', this.terms);
                 }
             }
         },
@@ -134,10 +138,10 @@
             }
         },
         mounted: function () {
-
+            this.terms = store.get('terms');
         },
-        updated: function () {
+        // updated: function () {
 
-        }
+        // }
     }
 </script>

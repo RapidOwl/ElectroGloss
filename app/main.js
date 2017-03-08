@@ -9,7 +9,7 @@ Vue.component('term-list', {
     template: '<div>' +
         '<div class="row"><div class="four columns">{{ term.name }}</div><div class="eight columns">{{ term.description }}</div></div>' +
         '<div class="row"><div class="four columns">{{ term.tags }}</div><div class="four columns">{{ term.otherNames }}</div><div class="four columns">{{ term.disambiguations }}</div></div>' +
-        '<div>'
+        '</div>'
 });
 
 Vue.component('yml-preview', {

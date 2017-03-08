@@ -20,6 +20,9 @@ let mainWindow;
 function createWindow() {
     // create the browser window
     mainWindow = new BrowserWindow({ width: width, height: height });
+
+    mainWindow.store = store;
+
     // render index.html which will contain our root Vue component
     mainWindow.loadURL('file://' + __dirname + '/index.html');
 
