@@ -1,3 +1,14 @@
 body {
     padding-top: 20px;
 }
+
+button[disabled],
+button[disabled]:hover {
+    background: #ccc;
+    border-color: #ccc;
+    text-shadow: none;
+}
+
+.text-center {
+    text-align: center;
+}
