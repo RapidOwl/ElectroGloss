@@ -2,6 +2,7 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const Store = require('./app/persistence/store.js');
+const gloss = require('./app/lib/gloss.js');
 
 const store = new Store({
     // We'll call our data file 'user-preferences'
@@ -12,8 +13,9 @@ const store = new Store({
     }
 });
 
-// Make the store available to getGlobal in remote API.
+// Make the store and gloss available to getGlobal in remote API.
 global.store = store;
+global.gloss = gloss;
 
 // Get the window bounds from the store.
 let { width, height } = store.get('windowBounds');

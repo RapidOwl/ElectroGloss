@@ -45,6 +45,9 @@
             <div class=text-center>
                 <button class="button-primary" type="submit" disabled="disabled" :disabled="!newTermValid">Submit</button>
             </div>
+            <div class=text-center>
+                <button class="button-primary" @click="prepareParsed">Parse YML</button>
+            </div>
         </form>
 
         <term-list v-for="term in terms" :term="term"></term-list>
@@ -54,7 +57,9 @@
 </template>
 
 <script>
-    const store = require('electron').remote.getGlobal('store');
+    const remote = require('electron').remote
+    const store = remote.getGlobal('store')
+    const gloss = remote.getGlobal('gloss');
 
     export default {
         data: {
@@ -109,6 +114,16 @@
 
                     store.set('terms', this.terms);
                 }
+            },
+            parseYml: function () {
+                var parsed = gloss.parse(this.ymlOutput);
+
+                return parsed;
+            },
+            prepareParsed: function () {
+                var prepared = gloss.prepare(this.parseYml());
+
+                return prepared;
             }
         },
         computed: {
