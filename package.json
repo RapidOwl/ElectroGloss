@@ -19,7 +19,7 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-runtime": "^5.8.38",
     "css-loader": "^0.26.2",
-    "electron": "^1.6.1",
+    "electron": "1.4.15",
     "style-loader": "^0.13.2",
     "vue-hot-reload-api": "^2.0.11",
     "vue-html-loader": "^1.2.4",

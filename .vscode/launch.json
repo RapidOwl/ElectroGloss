@@ -10,7 +10,8 @@
                 "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
             },
             "program": "${workspaceRoot}/main.js",
-            "protocol": "legacy"
+            "protocol": "auto",
+            "sourceMaps": true
         },
         {
             "name": "Debug Renderer Process",
