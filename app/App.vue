@@ -153,7 +153,9 @@
             }
         },
         mounted: function () {
-            this.terms = store.get('terms');
+            var storedTerms = store.get('terms');
+
+            this.terms = storedTerms == undefined ? [] : storedTerms;
         },
         // updated: function () {
 
