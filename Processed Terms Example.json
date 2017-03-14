@@ -1,0 +1,25 @@
+{
+    "tags": ["tag1", "tag2"],
+    "az": ["T"],
+    "terms": [{
+            "descs": ["Term One description"],
+            "term": "Term One",
+            "refs": {
+                "see": ["Term Two", "Term Two"],
+                "not": ["Term Two", "Term Two"]
+            },
+            "tags": ["tag1", "tag2"],
+            "desc": "Term One description"
+        },
+        {
+            "descs": ["Term Two description"],
+            "term": "Term Two",
+            "refs": {
+                "see": ["Term One", "Term One"],
+                "not": ["Term One", "Term One"]
+            },
+            "tags": ["tag1", "tag2"],
+            "desc": "Term Two description"
+        }
+    ]
+}

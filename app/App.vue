@@ -46,7 +46,7 @@
                 <button class="button-primary" type="submit" disabled="disabled" :disabled="!newTermValid">Submit</button>
             </div>
             <div class=text-center>
-                <button class="button-primary" @click="prepareParsed">Parse YML</button>
+                <button class="button-primary" @click="exportToHtml">PROCESS!</button>
             </div>
         </form>
 
@@ -58,6 +58,9 @@
 
 <script>
     const remote = require('electron').remote
+    const path = require('path');
+    const fs = require('fs');
+
     const store = remote.getGlobal('store')
     const gloss = remote.getGlobal('gloss');
 
@@ -116,14 +119,20 @@
                 }
             },
             parseYml: function () {
-                var parsed = gloss.parse(this.ymlOutput);
-
-                return parsed;
+                return gloss.parse(this.ymlOutput);
             },
             prepareParsed: function () {
-                var prepared = gloss.prepare(this.parseYml());
+                return gloss.prepare(this.parseYml());
+            },
+            // TODO How to export without the YML middle man:
+            // 1. Convert the terms into the format required by gloss.
+            // 2. Pass to the Gloss processor.
+            exportToHtml: function () {
+                var data = this.prepareParsed();
 
-                return prepared;
+                var filePath = path.resolve(__dirname, './dist');
+
+                debugger;
             }
         },
         computed: {
@@ -141,12 +150,12 @@
                         output += '  - [' + this.terms[i].tags.join(', ') + ']\n';
 
                     if (this.terms[i].otherNames.length > 0)
-                        output += '  - ' + this.terms[i].otherNames.join(', ') + '\n';
+                        output += '  - ' + this.terms[i].otherNames.join('\n  - ') + '\n';
 
                     if (this.terms[i].disambiguations.length > 0)
                         output += '  - ' + this.terms[i].disambiguations.map(function (item) {
                             return '\xAC' + item;
-                        }).join(', ') + '\n';
+                        }).join('\n  - ') + '\n';
                 }
 
                 return output;
